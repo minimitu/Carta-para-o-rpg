@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>O Chamado das Sombras</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>O Chamado das Sombras</h1>
+    <p>
+      <strong>Mistério</strong> envolve aqueles que ousam desafiar o desconhecido. É um véu que cobre a verdade, aguardando apenas os corajosos para desvendá-lo.
+    </p>
+    <p>
+      <strong>Esperança</strong> surge como uma luz fraca no horizonte, mostrando que mesmo nas trevas mais profundas, há algo pelo qual vale a pena lutar.
+    </p>
+    <p>
+      <strong>Destino</strong> guia silenciosamente cada passo, moldando o caminho de quem busca a verdadeira essência do que está oculto.
+    </p>
+    <p>
+      <strong>Oportunidade</strong> bate à porta apenas uma vez. Aqueles que a abraçam descobrirão segredos que permanecem adormecidos nas sombras.
+    </p>
+    <div class="input-area">
+      <input type="text" id="wordInput" placeholder="Digite a palavra-chave">
+      <button id="submitButton">Enviar</button>
+    </div>
+    <div id="message"></div>
+  </div>
+
+  <script>
+    document.getElementById("submitButton").addEventListener("click", function () {
+      const input = document.getElementById("wordInput").value.toLowerCase().trim();
+      const correctWord = "medo"; // Palavra-chave final
+      
+      if (input === correctWord) {
+        document.body.className = "carta"; // Adiciona o estilo para a carta
+        document.body.innerHTML = `
+          <div class="carta-container">
+            <h1>Carta Revelada</h1>
+            <p>
+              "O medo é a força que governa os corações dos mortais. Ele é o eco de tudo o que foi perdido, 
+              um reflexo das sombras que moldam o mundo. Mas há algo mais antigo que o próprio medo: 
+              uma criatura que dorme sob o véu da realidade, aguardando o momento em que o destino dos bravos será selado. 
+              Vocês encontraram o primeiro fragmento, mas a jornada está apenas começando. 
+              Lembrem-se: o medo não é o fim, mas o começo de tudo."
+            </p>
+          </div>
+        `;
+      } else {
+        document.getElementById("message").textContent = "A palavra está incorreta. Tente novamente.";
+      }
+    });
+  </script>
+</body>
+</html>
